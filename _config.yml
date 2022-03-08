@@ -1,5 +1,5 @@
 theme: jekyll-theme-dinky
-title: Sanvi's homepage
+title: ReadME
 description: This will display progress, pair share journal, test prep
 plugins:
   - jekyll-relative-links
