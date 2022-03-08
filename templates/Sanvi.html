@@ -1,0 +1,126 @@
+{% extends "layouts/base.html" %}
+
+{% block meta %}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+{% endblock %}
+
+{% block content %}
+
+    <h1>Sanvi Pal</h1>
+    <p> Hi {{name}}, I'm Sanvi! I am a senior at Del Norte High School</p>
+
+    <br><a class="button" href="https://docs.google.com/document/d/1pSAqPrdru8p5v9sU7csL_tyJAvifw9apmTwlzlhcn08/edit?usp=sharing">Pair Share Journal</a></br>
+    <br><a class="button" href="https://github.com/sanvi1855544/p3-avatar/commits?author=sanvi1855544">Individual Commits</a></br>
+
+
+
+    <img id="myImage" onclick="changeImage()" src="/static/images/sanviwmask.jpg"" width="500" height="900">
+
+
+    <script>
+        function changeImage() {
+            var image = document.getElementById('myImage');
+            if (image.src.match("/static/images/sanviwmask.jpg")) {
+                image.src = "/static/images/sanvinmask.jpg";
+            } else {
+                image.src = "/static/images/sanviwmask.jpg";
+            }
+        }
+    </script>
+
+    <h1>Minilabs</h1>
+    <form action="/sanvi" id="sanvi" method="POST" >
+        <label for="name">Enter Your Name</label>
+        <input name="name" id="name">
+        <input type="submit" value="Go!">
+    </form>
+
+    <head>
+        <style>
+            div {
+                width: 10px;
+                height: 10px;
+                background-color: #f9d4ff;
+                position: relative;
+                animation-name: example;
+                animation-duration: 4s;
+            }
+
+            @keyframes example {
+                0%   {background-color: rgb(249, 212, 255); left:0px; top:0px;}
+                25%  {background-color: #bbb113; left:200px; top:0px;}
+                50%  {background-color: #6797bb; left:200px; top:200px;}
+                75%  {background-color: #4cbb89; left:0px; top:200px;}
+                100% {background-color: #f9d4ff; left:0px; top:0px;}
+            }
+        </style>
+    </head>
+
+
+    <body>
+    <script>
+        function Function1() {
+            document.getElementById("demo").innerHTML = "BOO!";
+        }
+    </script>
+    <p>Click the button !</p>
+
+
+    <p id="demo"></p>
+    <button onclick="Function1()">Click me</button>
+
+    </body>
+
+    <body>
+    <p>Click the button to display the time.</p>
+
+    <button onclick="getElementById('demo').innerHTML=Date()">What is the time?</button>
+
+    <p id="demo"></p>
+
+    </body>
+
+    <p>Block Animation</p>
+    <head>
+        <meta charset="utf-8">
+        <title>Box animation</title>
+        <style>
+            .transform_animation {
+                width: 200px;
+                height: 100px;
+                margin-top:30px;
+                background-color: rgb(235, 122, 84);
+                animation-duration: 60s;
+                animation-name: skew_animation;
+            }
+
+            @keyframes skew_animation {
+                0% {
+                    transform: skew(0deg);
+                }
+                50% {
+                    transform: skew(30deg);
+                }
+
+                100% {
+                    background-color: cyan;
+                }
+            }
+        </style>
+    </head>
+    <body>
+    <br>
+    <div style="text-align: center;">
+        <div class = "transform_animation">
+
+        </div>
+    </div>
+    </body>
+
+
+
+
+
+{% endblock %}
