@@ -15,7 +15,7 @@ Our website goal is to help relieve the stress of students here at Del Norte and
    <tr>
     <td>Sanvi Pal (Deployment Manager)</td>
     <td> <a href="https://github.com/sanvi1855544">@sanvi1855544</a> </td>
-    <td> </td>
+    <td> <a href="https://github.com/sanvi1855544/testprep/commits?author=sanvi1855544">Commits</a> </td>
   </tr>
   <tr>
     <td> Kian Pasokhi (Github Admin) </td>
@@ -24,13 +24,13 @@ Our website goal is to help relieve the stress of students here at Del Norte and
   </tr>
   <tr>
     <td> Shruti Chari (Scrum Master?) </td>
-    <td> </td>
-    <td> </td>
+    <td> <a href="https://github.com/shrutiapcsp">@shrutiapcsp</a> </td>
+    <td> <a href="https://github.com/sanvi1855544/testprep/commits?author=shrutiapcsp">Commits</a> </td>
   </tr>
   <tr>
     <td> Gennalyn Bongolan (Technical Officer?)</td>
     <td> <a href="https://github.com/Gennalynb123">@Gennalynb123</a></td>
-    <td> </td>
+    <td> <a href="https://github.com/sanvi1855544/testprep/commits?author=Gennalynb123">Commits</a> </td>
   </tr>
   
 </table>
