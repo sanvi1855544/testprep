@@ -2,7 +2,7 @@ from __init__ import app
 from flask import Flask, render_template, request
 from Sanvi.templates.Sanvi import sanvi_bp
 from Shruti.templates.Shruti import shruti_bp
-from IDK.templates.IDK import IDK_bp
+from Kian.templates.Kian import kian_bp
 from Gennalyn.templates.Gennalyn import gennalyn_bp
 
 
@@ -13,7 +13,7 @@ def index():
     URL = "https://last-airbender-api.herokuapp.com/api/v1/characters/random"
     r = requests.get(url=URL)
     data = r.json()
-    return render_template("index.html", data=data) #"Avatar Website"
+    return render_template("index.html", data=data) #"Test Prep Website"
 
 #about pages
 @app.route("/Gennalyn/")
@@ -49,5 +49,5 @@ if __name__ == "__main__":
 
 app.register_blueprint(sanvi_bp)
 app.register_blueprint(shruti_bp)
-app.register_blueprint(IDK_bp)
+app.register_blueprint(kian_bp)
 app.register_blueprint(gennalyn_bp)
