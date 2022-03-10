@@ -40,20 +40,45 @@ Our website goal is to help relieve the stress of students here at Del Norte and
 ### Team Tasks
 <table>
    <tr>
-    <th>Task</th>
-    <th>Link</th>
+    <th>Requirements</th>
+    <th>Tasks/Links</th>
    </tr>
    <tr>
     <td>Wireframe</td>
-    <td> <a href="">Wireframe</a> </td>
+    <td> <a href="https://github.com/sanvi1855544/testprep/wiki/Wireframe">Website Plan</a> </td>
   </tr>
   <tr>
     <td> Scrum Board </td>
-    <td> <a href="">Scrum Board</a> </td>
+    <td> <a href="https://github.com/sanvi1855544/testprep/projects/1">Scrum Board + Tickets</a> </td>
   </tr>
   <tr>
     <td> Project Plans/ideas </td>
-    <td> <a href="">Project plans/ideas</a> </td>
+    <td> <a href="https://github.com/sanvi1855544/testprep/wiki/Project-Plans-Ideas-Description">Ideation</a> </td>
+   </tr>
+  
+</table>
+
+### Individual Pages
+<table>
+   <tr>
+    <th>Team member</th>
+    <th>Github Pages</th>
+   </tr>
+   <tr>
+    <td>Sanvi</td>
+    <td> <a href="https://sanvi1855544.github.io/sanviapcsp/">Sanvi Page Link</a> </td>
+  </tr>
+  <tr>
+    <td> Shruti </td>
+    <td> Shruti Page Link</td>
+  </tr>
+  <tr>
+    <td> Gennalyn </td>
+    <td> <a href="https://gennalynb123.github.io/Individual-Algorithmic-Project/">Gennalyn Page Link</a> </td>
+   </tr>
+   <tr>
+    <td> Kian </td>
+    <td> Kian Page Link </td>
    </tr>
   
 </table>
