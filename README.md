@@ -23,14 +23,37 @@ Our website goal is to help relieve the stress of students here at Del Norte and
     <td> </td>
   </tr>
   <tr>
-    <td> Shruti Chari (Scrum Master?) </td>
+    <td> Shruti Chari (Scrum Master) </td>
     <td> <a href="https://github.com/shrutiapcsp">@shrutiapcsp</a> </td>
     <td> <a href="https://github.com/sanvi1855544/testprep/commits?author=shrutiapcsp">Commits</a> </td>
   </tr>
   <tr>
-    <td> Gennalyn Bongolan (Technical Officer?)</td>
+    <td> Gennalyn Bongolan (Technical Officer)</td>
     <td> <a href="https://github.com/Gennalynb123">@Gennalynb123</a></td>
     <td> <a href="https://github.com/sanvi1855544/testprep/commits?author=Gennalynb123">Commits</a> </td>
   </tr>
+  
+</table>
+
+
+## Week 0
+### Team Tasks
+<table>
+   <tr>
+    <th>Task</th>
+    <th>Link</th>
+   </tr>
+   <tr>
+    <td>Wireframe</td>
+    <td> <a href="">Wireframe</a> </td>
+  </tr>
+  <tr>
+    <td> Scrum Board </td>
+    <td> <a href="">Scrum Board</a> </td>
+  </tr>
+  <tr>
+    <td> Project Plans/ideas </td>
+    <td> <a href="">Project plans/ideas</a> </td>
+   </tr>
   
 </table>
