@@ -20,7 +20,7 @@ Our website goal is to help relieve the stress of students here at Del Norte and
   <tr>
     <td> Kian Pasokhi (Github Admin) </td>
     <td> <a href="https://github.com/kiannp44">@kiannp44</a> </td>
-    <td> </td>
+    <td> <a href="https://github.com/sanvi1855544/testprep/commits?author=kiannp44">Commits</a> </td>
   </tr>
   <tr>
     <td> Shruti Chari (Scrum Master) </td>
