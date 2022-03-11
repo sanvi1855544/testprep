@@ -44,7 +44,7 @@ Our website goal is to help relieve the stress of students here at Del Norte and
     <th>Requirements</th>
    </tr>
    <tr>
-    <td> Web Project:<a href="https://github.com/sanvi1855544/testprep/wiki/Project-Plans"> Project Description</a>, <a href="https://github.com/sanvi1855544/testprep/wiki/Wireframe">Project Plans/Ideas/Wires</a>, Time box </td>
+    <td> Web Project:<a href="https://github.com/sanvi1855544/testprep/wiki/Project-Plans"> Project Description</a>, <a href="https://github.com/sanvi1855544/testprep/wiki/Project-Plans,-Ideas,-Wires">Project Plans/Ideas/Wires</a>, Time box </td>
   </tr>
   <tr>
     <td> <a href="https://github.com/sanvi1855544/testprep#readme">Team Roles described</a>, Project Owner or <a href="https://github.com/sanvi1855544/testprep/wiki/Project-Plans">Sponsor described</a>, <a href="https://github.com/sanvi1855544/testprep/projects/1">Scrum Board started</a> </td>
