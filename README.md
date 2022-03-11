@@ -35,49 +35,38 @@ Our website goal is to help relieve the stress of students here at Del Norte and
   
 </table>
 
+<br>
 
 ## Week 0
 ### Team Tasks
 <table>
    <tr>
     <th>Requirements</th>
-    <th>Tasks/Links</th>
    </tr>
    <tr>
-    <td>Wireframe</td>
-    <td> <a href="https://github.com/sanvi1855544/testprep/wiki/Wireframe">Website Plan</a> </td>
+    <td> Web Project:<a href="https://github.com/sanvi1855544/testprep/wiki/Project-Plans"> Project Description, Project Plans/Ideas</a>, <a href="https://github.com/sanvi1855544/testprep/wiki/Wireframe"> Wires</a>, Time box </td>
   </tr>
   <tr>
-    <td> Scrum Board </td>
-    <td> <a href="https://github.com/sanvi1855544/testprep/projects/1">Scrum Board + Tickets</a> </td>
+    <td> <a href="https://github.com/sanvi1855544/testprep#readme">Team Roles described</a>, Project Owner or <a href="https://github.com/sanvi1855544/testprep/wiki/Project-Plans">Sponsor described</a>, <a href="https://github.com/sanvi1855544/testprep/projects/1">Scrum Board started</a> </td>
   </tr>
-  <tr>
-    <td> Project Plans/ideas </td>
-    <td> <a href="https://github.com/sanvi1855544/testprep/wiki/Project-Plans-Ideas-Description">Ideation</a> </td>
-   </tr>
   
 </table>
 
-### Individual Pages
+### Individual Github Pages
 <table>
    <tr>
     <th>Team member</th>
-    <th>Github Pages</th>
    </tr>
    <tr>
-    <td>Sanvi</td>
-    <td> <a href="https://sanvi1855544.github.io/sanviapcsp/">Sanvi Page Link</a> </td>
+    <td> <a href="https://sanvi1855544.github.io/sanviapcsp/">Sanvi</a> </td>
   </tr>
   <tr>
-    <td> Shruti </td>
     <td> Shruti Page Link</td>
   </tr>
   <tr>
-    <td> Gennalyn </td>
-    <td> <a href="https://gennalynb123.github.io/Individual-Algorithmic-Project/">Gennalyn Page Link</a> </td>
+    <td> <a href="https://gennalynb123.github.io/Individual-Algorithmic-Project/">Gennalyn</a> </td>
    </tr>
    <tr>
-    <td> Kian </td>
     <td> Kian Page Link </td>
    </tr>
   
