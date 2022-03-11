@@ -19,7 +19,7 @@ Our website goal is to help relieve the stress of students here at Del Norte and
   </tr>
   <tr>
     <td> Kian Pasokhi (Github Admin) </td>
-    <td> </td>
+    <td> <a href="https://github.com/kiannp44">@kiannp44</a> </td>
     <td> </td>
   </tr>
   <tr>
