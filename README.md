@@ -67,7 +67,7 @@ Our website goal is to help relieve the stress of students here at Del Norte and
     <td> <a href="https://gennalynb123.github.io/Individual-Algorithmic-Project/">Gennalyn</a> </td>
    </tr>
    <tr>
-    <td> Kian Page Link </td>
+    <td> <a href="https://kiannp44.github.io/kianpcsp/">Kian</a> </td>
    </tr>
   
 </table>
