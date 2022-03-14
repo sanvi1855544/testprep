@@ -61,7 +61,7 @@ Our website goal is to help relieve the stress of students here at Del Norte and
     <td> <a href="https://sanvi1855544.github.io/sanviapcsp/">Sanvi</a> </td>
   </tr>
   <tr>
-    <td> Shruti Page Link</td>
+    <td> <a href="https://shrutiapcsp.github.io/Shruti-Individual-//">Sanvi</a> </td>
   </tr>
   <tr>
     <td> <a href="https://gennalynb123.github.io/Individual-Algorithmic-Project/">Gennalyn</a> </td>
