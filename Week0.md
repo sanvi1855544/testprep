@@ -1,20 +1,37 @@
-## Create Task Project
+## Week 0
 ### (intentions, snippets, links to runtime)
 
-[PBL Create Performance Task (Hangman Game)](http://54.153.91.79/Hangman/)
+## Week 0
+### Team Tasks
+<table>
+   <tr>
+    <th>Requirements</th>
+   </tr>
+   <tr>
+    <td> Web Project:<a href="https://github.com/sanvi1855544/testprep/wiki/Project-Description"> Project Description</a>, <a href="https://github.com/sanvi1855544/testprep/wiki/Project-Plans,-Ideas,-Wires">Project Plans/Ideas/Wires</a>, Time box </td>
+  </tr>
+  <tr>
+    <td> <a href="https://github.com/sanvi1855544/testprep#readme">Team Roles described</a>, Project Owner or <a href="https://github.com/sanvi1855544/testprep/wiki/Project-Description">Sponsor described</a>, <a href="https://github.com/sanvi1855544/testprep/projects/1">Scrum Board started</a> </td>
+  </tr>
+  
+</table>
 
-
-![image](https://user-images.githubusercontent.com/72752116/158079648-e79a6e22-cd33-4c8e-873d-00d2b4c528d9.png)
-
-[Original Issue](https://github.com/sanvi1855544/p3-avatar/issues/42)
-
-**Create Performance Task Description and Outline**
-Components:
-- [Program code](https://github.com/sanvi1855544/p3-avatar/blob/main/templates/Hangman.html)
-- [Video](https://drive.google.com/file/d/1jzVEzDg98GVJy71GLtC4TgW_0gPTZEuE/view?usp=sharing)
-- [Written response](https://docs.google.com/document/d/1pSAqPrdru8p5v9sU7csL_tyJAvifw9apmTwlzlhcn08/edit#bookmark=id.c1w7u41tat44)
-
-**Requirements:**
-- input and output
-- use [list/array](https://github.com/sanvi1855544/p3-avatar/commit/cd300c3ad6206ff10f52c61fd1fbb00893d1201c#diff-b339e4cebe930b668f721caf36733a1a94f08a7485073725eb93e5f2925d7b20R208-R210)
-- make and use a student-developed procedure/function that contains an algorithm and includes sequencing, [selection](https://github.com/sanvi1855544/p3-avatar/blob/d893581c788e757be33bae44aaef6509e6232958/templates/Hangman.html#L248-L256), [iteration](https://github.com/sanvi1855544/p3-avatar/blob/d893581c788e757be33bae44aaef6509e6232958/templates/Hangman.html#L235-L244)
+### Individual Github Pages
+<table>
+   <tr>
+    <th>Team member</th>
+   </tr>
+   <tr>
+    <td> <a href="https://sanvi1855544.github.io/sanviapcsp/">Sanvi</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="https://shrutiapcsp.github.io/Shruti-Individual-//">Shruti</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="https://gennalynb123.github.io/Individual-Algorithmic-Project/">Gennalyn</a> </td>
+   </tr>
+   <tr>
+    <td> <a href="https://kiannp44.github.io/kianpcsp/">Kian</a> </td>
+   </tr>
+  
+</table>
