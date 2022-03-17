@@ -7,4 +7,4 @@ relative_links:
   enabled: true
   collections: true
 include:
-  Sanvi.md
+  README.md
