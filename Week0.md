@@ -1,5 +1,3 @@
-## Week 0
-### (intentions, snippets, links to runtime)
 
 ## Week 0
 ### Team Tasks
