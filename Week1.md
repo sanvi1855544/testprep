@@ -1,5 +1,3 @@
-{% include navigation.html %}
-
 ## Week 1
 ### Team Tasks
 <table>
