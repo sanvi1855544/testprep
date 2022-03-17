@@ -38,4 +38,6 @@ Our website goal is to help relieve the stress of students here at Del Norte and
 <br>
 
 ### Tickets
+<a href="https://github.com/sanvi1855544/testprep/issues/8">Week 1 Ticket</a> <br>
+<a href="https://github.com/sanvi1855544/testprep/issues/1">Week 0 Ticket</a> 
 
