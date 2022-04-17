@@ -24,6 +24,7 @@
         {% block meta %}{% endblock %}
     </head>
 
+
     <body class="baseNav"> 
         <nav class="navbar navbar-expand-lg navbar-custom ">
 
@@ -33,6 +34,16 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false" id="dropdownMenuButton2" type="button">Database</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                            <li><a class="dropdown-item" href={{ url_for('crud.crud') }}>Crud</a></li>
+                            <li><a class="dropdown-item" href={{ url_for('crud.search') }}>Search</a></li>
+                            <li><a class="dropdown-item" href={{ url_for('crud_api.crud_api') }}>Crud Async</a></li>
+                        </ul>
+                    </li>
 
                 </li>
             </ul>
@@ -56,7 +67,7 @@
                                 <li><a class="dropdown-item" href="/Gennalyn">Gennalyn</a></li>
                                 <li><a class="dropdown-item" href="/Shruti">Shruti</a></li>
                                 <li><a class="dropdown-item" href="/Sanvi">Sanvi</a></li>
-                                <li><a class="dropdown-item" href="/Kian">IDK</a></li>
+                                <li><a class="dropdown-item" href="/Kian">Kian</a></li>
 
                             </ul>
                         </li>
