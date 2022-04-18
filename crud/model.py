@@ -111,7 +111,7 @@ def model_tester():
     """Tester data for table"""
     u1 = Users(name='Sanvi Pal', email='sanvi11929@gmail.com', password='rad1234', phone="8587059884")
     u2 = Users(name='Shruti Chari', email='shrutijchari@gmail.com', password='123shrut', phone="1111112222")
-    u3 = Users(name='Gennalyn Bongalan', email='gennb@gmail.com', password='123genn', phone="1111113333")
+    u3 = Users(name='Gennalyn Bongalan', email='gennalyn@live.com', password='123genn', phone="1111113333")
     u4 = Users(name='Kian Pasokhi', email='kianp@gmail.com', password='123kian', phone="1111114444")
     u5 = Users(name='John Mortensen', email='jmort1021@gmail.com', password='123qwerty', phone="8587754956")
     u6 = Users(name='John Mortensen', email='jmort1021@yahoo.com', password='123qwerty', phone="8587754956")
