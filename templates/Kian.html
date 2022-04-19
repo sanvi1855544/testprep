@@ -8,6 +8,108 @@
 
 {% block content %}
 
+<!-- !PAGE CONTENT! -->
+<div class="w3-content" style="max-width:1500px">
+
+    <!-- Header -->
+    <header class="w3-container w3-xlarge w3-padding-24">
+        <a href="#" class="w3-left w3-button w3-white">My Pictures</a>
+        <a href="#about" class="w3-right w3-button w3-white">Bio</a>
+    </header>
+
+    <!-- Photo Grid -->
+    <div class="w3-row">
+        <div class="w3-half">
+            <img src="/static/assets/la_pond.jpg" style="width:100%">
+            <img src="/static/assets/plane.png" style="width:100%">
+
+        </div>
+
+        <div class="w3-half">
+            <img src="/static/assets/jungle.jpg" style="width:100%">
+            <img src="/static/assets/Kian_food.jpg" style="width:100%">
+
+        </div>
+    </div>
+
+    <!-- End Page Content -->
+</div>
+<p> </p>
+<button onclick="toggle()">Mask Toggle</button>
+<div>
+    <img id="mask" src="/static/assets/kianmask.jpg" width="400">
+    <img id="nomask" src="/static/assets/kiannomask.jpg" width="400" style="display: none;">
+</div>
+<script>
+            function toggle() {
+                let a = document.getElementById("mask");
+                let b = document.getElementById("nomask");
+                if (b.style.display === "block") {
+                    a.style.display = "block";
+                    b.style.display = "none";
+                } else {
+                    a.style.display = "none";
+                    b.style.display = "block";
+                }
+            }
+        </script>
+<div>
+
+    <!-- Footer / About Section -->
+    <footer class="w3-light-grey w3-padding-64 w3-center" id="about">
+        <h2>About Me</h2>
+        <img src="/static/assets/Kian.JPG" class="w3-image w3-padding-32" width="300" height="300">
+        <form style="margin:auto;width:60%" action="/action_page.php" target="_blank">
+            <p> </p>
+            a.style.display = "none";
+            b.style.display = "block";
+            }
+            }
+            </script>
+            <div>
+                <p>Hi, welcome to my About Me page! My name is Kian Pasokhi, I am 16, and I am a Sophmore here at Del Norte Highschool. On my free time I like to sleep, study, play video games, listen to music, travel, and hangout with my friends.   </p>
+                <p class="w3-large w3-text-pink">My contact information:</p>
+                <div class="w3-section">
+                    <label><b>Email:</b></label>
+                    Kianhero44@gmail.com
+                    <p>
+                        <b style="font-size: large">Click on book below for my pair share journal</b>
+                    <p><a href="https://docs.google.com/document/d/1bz69bZUXveOjDREpvgvM_BcSK2rspoDvrIt0UUoQAxs/edit?usp=sharing">
+                        <img src="/static/assets/journal.jpg" width="200">
+                    </a>
+
+                </div>
+
+    </footer>
+    {% set songs = output %}
+    <div class="col-12 mainbox center-block">
+        <table style="margin: 2%">
+            <tr>
+                <th>IATA Codes</th>
+                <th>Name</th>
+                <th>ICAO Codes</th>
+            </tr>
+
+            {% for headers in songs %}
+            <tr>
+                <td>{{headers.meta}}</td>
+                <td>{{headers.status}}
+                <td>{{headers.response}}</td>
+                <td>{{headers.songs}}</td>
+                <td>{{headers.next_page}}</td>
+
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
 
 
-{% endblock %}
+    </body>
+    </html>
+    {% endblock %}
+
+
+
+
+
+    {% endblock %}

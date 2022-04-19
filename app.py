@@ -29,9 +29,9 @@ def Sanvi():
 
 #PBL pages
 
-
-
-
+@app.route("/tictactoe/")
+def tictactoe():
+    return render_template("tictactoe.html")
 
 @app.route('/lookup')
 def lookup():
