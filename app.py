@@ -10,42 +10,51 @@ from Gennalyn.templates.Gennalyn import gennalyn_bp
 app.register_blueprint(app_crud)
 app.register_blueprint(app_crud_api)
 
+
 @app.route("/")
 def index():
     import requests
     URL = "https://last-airbender-api.herokuapp.com/api/v1/characters/random"
     r = requests.get(url=URL)
     data = r.json()
-    return render_template("index.html", data=data) #"Test Prep Website"
+    return render_template("index.html", data=data)  # "Test Prep Website"
 
-#about pages
+
+# about pages
 @app.route("/Gennalyn/")
 def Gennalyn():
     return render_template("Gennalyn.html")
+
 
 @app.route("/Sanvi/")
 def Sanvi():
     return render_template("Sanvi.html")
 
-#PBL pages
 
-@app.route("/tictactoe/")
+# PBL pages
+
+@app.route('/tictactoe/')
 def tictactoe():
     return render_template("tictactoe.html")
 
+@app.route('/flappyblocks/')
+def flappyblocks():
+    return render_template("flappyblocks.html")
+
+
 @app.route('/lookup')
 def lookup():
-
     query = request.args.get('lookup')
     # req_search = query.filter_by(req_no=query)
 
-    page = query+'.html'
+    page = query + '.html'
     from pathlib import Path
-    my_file = Path("templates/"+page)
+    my_file = Path("templates/" + page)
     if my_file.exists():
         return render_template(page)
     else:
         return render_template('lookup.html', req_search=query)
+
 
 if __name__ == "__main__":
     app.run(host="127.0.0.1", port=8080)
@@ -54,3 +63,4 @@ app.register_blueprint(sanvi_bp)
 app.register_blueprint(shruti_bp)
 app.register_blueprint(kian_bp)
 app.register_blueprint(gennalyn_bp)
+
