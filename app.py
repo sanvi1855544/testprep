@@ -37,6 +37,10 @@ def Sanvi():
 def tictactoe():
     return render_template("tictactoe.html")
 
+@app.route('/diagnostic/')
+def diagnostic():
+    return render_template("diagnostic.html")
+
 @app.route('/flashcard/')
 def flashcard():
     return render_template("flashcard.html")
