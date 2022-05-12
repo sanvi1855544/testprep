@@ -15,291 +15,714 @@
     <title>Tic Tac Toe</title>
 </head>
 
-<style>
+<input type="checkbox" id="difficulty" checked />
+<input type="checkbox" id="sound" />
+<input type="checkbox" id="first" />
 
-    body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background-color: black;
-      color: blue;
-    }
+<input type="checkbox" id="start" />
 
-    #board {
-      display: grid;
-      grid-template-columns: 100px 100px 100px;
-      grid-template-rows: 100px 100px 100px;
-      cursor: pointer;
-      position: relative;
-    }
+<form id="tictactoe">
+    <input type="radio" name="cell-0" id="cell-0-x" />
+    <input type="radio" name="cell-0" id="cell-0-o" />
+    <input type="radio" name="cell-1" id="cell-1-x" />
+    <input type="radio" name="cell-1" id="cell-1-o" />
+    <input type="radio" name="cell-2" id="cell-2-x" />
+    <input type="radio" name="cell-2" id="cell-2-o" />
+    <input type="radio" name="cell-3" id="cell-3-x" />
+    <input type="radio" name="cell-3" id="cell-3-o" />
+    <input type="radio" name="cell-4" id="cell-4-x" />
+    <input type="radio" name="cell-4" id="cell-4-o" />
+    <input type="radio" name="cell-5" id="cell-5-x" />
+    <input type="radio" name="cell-5" id="cell-5-o" />
+    <input type="radio" name="cell-6" id="cell-6-x" />
+    <input type="radio" name="cell-6" id="cell-6-o" />
+    <input type="radio" name="cell-7" id="cell-7-x" />
+    <input type="radio" name="cell-7" id="cell-7-o" />
+    <input type="radio" name="cell-8" id="cell-8-x" />
+    <input type="radio" name="cell-8" id="cell-8-o" />
 
-    .tile {
-      color: currentColor;
-      font-size: 2em;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+    <div id="menu" class="scrim">
+        <div class="center">
+            <h1>Tic-Tac-Toe</h1>
+            <div>
+                <h2>Difficulty</h2>
+                <div class="toggle-group">
+                    <span>Beginner</span>
+                    <label for="difficulty" class="toggle"></label>
+                    <span>Advanced</span>
+                </div>
+                <!-- Soon...
+                <h2>Sound</h2>
+                <div class="toggle-group">
+                  <span>Off</span>
+                  <label for="sound" class="toggle"></label>
+                  <span>On</span>
+                </div>
+                -->
+                <h2>First turn</h2>
+                <div class="toggle-group">
+                    <span>Player</span>
+                    <label for="first" class="toggle"></label>
+                    <span>Computer</span>
+                </div>
+                <label for="start" id="start-button" class="btn">Start Game</label>
+            </div>
+        </div>
+    </div>
 
-    .right-border {
-      border-right: 0.2em solid green;
-    }
+    <div id="board" class="center">
+        <div class="tile" id="tile-0">
+            <label for="cell-0-x"></label>
+            <div></div>
+        </div>
+        <div class="tile" id="tile-1">
+            <label for="cell-1-x"></label>
+            <div></div>
+        </div>
+        <div class="tile" id="tile-2">
+            <label for="cell-2-x"></label>
+            <div></div>
+        </div>
+        <div class="tile" id="tile-3">
+            <label for="cell-3-x"></label>
+            <div></div>
+        </div>
+        <div class="tile" id="tile-4">
+            <label for="cell-4-x"></label>
+            <div></div>
+        </div>
+        <div class="tile" id="tile-5">
+            <label for="cell-5-x"></label>
+            <div></div>
+        </div>
+        <div class="tile" id="tile-6">
+            <label for="cell-6-x"></label>
+            <div></div>
+        </div>
+        <div class="tile" id="tile-7">
+            <label for="cell-7-x"></label>
+            <div></div>
+        </div>
+        <div class="tile" id="tile-8">
+            <label for="cell-8-x"></label>
+            <div></div>
+        </div>
+    </div>
+    <div id="label-computer" class="btn">
+        Computer Move!
+        <label for="cell-0-o"></label>
+        <label for="cell-1-o"></label>
+        <label for="cell-2-o"></label>
+        <label for="cell-3-o"></label>
+        <label for="cell-4-o"></label>
+        <label for="cell-5-o"></label>
+        <label for="cell-6-o"></label>
+        <label for="cell-7-o"></label>
+        <label for="cell-8-o"></label>
+    </div>
+    <div id="end" class="scrim">
+        <div id="message" class="center">
+            <div>
+                <input type="reset" for="tictactoe" value="Play again" />
+            </div>
+        </div>
+    </div>
+</form>
 
-    .bottom-border {
-      border-bottom: 0.2em solid green;
-    }
+<STYLE>
+    @import url('https://fonts.googleapis.com/css?family=Mandali|Raleway:900&display=swap');
 
-    .strike {
-      position: absolute;
-      background-color: white;
-    }
+input[type="radio"],
+input[type="checkbox"] {
+  position: absolute;
+  top: -9999em;
+}
 
-    .strike-row-1 {
-      width: 100%;
-      height: 4px;
-      top: 15%;
-    }
-    .strike-row-2 {
-      width: 100%;
-      height: 4px;
-      top: 48%;
-    }
-    .strike-row-3 {
-      width: 100%;
-      height: 4px;
-      top: 83%;
-    }
-    .strike-column-1 {
-      height: 100%;
-      width: 4px;
-      left: 15%;
-    }
-    .strike-column-2 {
-      height: 100%;
-      width: 4px;
-      left: 48%;
-    }
-    .strike-column-3 {
-      height: 100%;
-      width: 4px;
-      left: 83%;
-    }
-    .strike-diagonal-1 {
-      width: 90%;
-      height: 4px;
-      top: 50%;
-      left: 5%;
-      transform: skewY(45deg);
-    }
-    .strike-diagonal-2 {
-      width: 90%;
-      height: 4px;
-      top: 50%;
-      left: 5%;
-      transform: skewY(-45deg);
-    }
+#menu {
+  display: block;
+  background: rgba(0,0,0,0.8);
+  text-align: center;
+}
 
-    h1 {
-      color: currentColor;
-    }
+#menu > div {
+  background: #fff;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+}
 
-    #game-over-area {
-      text-align: center;
-      border: indigo 8px solid;
-      padding: 50px;
-      width: 50%;
-      margin-top: 50px;
-    }
+.toggle-group {
+  display: flex;
+}
 
-    h2 {
-      color: currentColor;
-      font-size: 2em;
-      margin-top: 0px;
-    }
+.toggle-group span {
+  flex: 1;
+  text-align: left;
+}
 
-    button {
-      background-color: transparent;
-      color: currentColor;
-      border: currentColor 1px solid;
-      padding: 10px;
-      font-size: 1.5em;
-    }
+.toggle-group span:nth-of-type(1) {
+  text-align: right;
+}
 
-    .hidden {
-      display: none;
-    }
+.toggle {
+  display: inline-block;
+  width: 3rem;
+  height: 1.5rem;
+  background: #ddd;
+  vertical-align: bottom;
+  margin: 0.33rem 0.5rem;
+  border-radius: 1rem;
+  position: relative;
+  cursor: pointer;
+}
 
-    .visible {
-      display: block;
-    }
+.toggle::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  top: 0.25rem;
+  left: 0.25rem;
+  background: #000;
+  background: #004974;
+  border-radius: 100%;
+  transition: left 0.25s, background-color 0.25s;
+}
 
-    .x-hover:hover::after {
-      content: "X";
-      opacity: 0.4;
-    }
+.btn {
+  width: 100%;
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  border-radius: 5px;
+  margin-top: 2rem;
+  padding: 0.33rem;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: background-color 0.25s;
+}
 
-    .o-hover:hover::after {
-      content: "O";
-      opacity: 0.4;
-    }
-</style>
+.btn:hover {
+  background: #333;
+}
+
+#start:checked ~ form #menu {
+  display: none;
+}
+
+#difficulty:checked ~ form #menu label[for=difficulty]::before,
+#sound:checked ~ form #menu label[for=sound]::before,
+#first:checked ~ form #menu label[for=first]::before {
+  left: 1.75rem;
+  background: #a60011;
+}
+
+h1 {
+  margin: 0 0 0.5rem 0;
+  text-align: center;
+  white-space: nowrap;
+   color: #004974;
+}
+
+h2 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  margin: 1.25rem 0 0.1rem 0;
+  color: #a60011;
+}
+
+html, body {
+  font-family: Mandali, Arial, sans-serif;
+  font-size: 16px;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#board {
+  width: 50vmin;
+  height: 50vmin;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.tile {
+  margin: 5%;
+  position: relative;
+}
+
+.tile label,
+.tile div {
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.10);
+  font-family: Raleway, Courier, 'Courier New', Sans, sans-serif;
+  font-weight: bolder;
+}
+
+.tile div {
+  display: none;
+  overflow: hidden;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.85)
+}
+
+@keyframes shadow {
+  from { box-shadow: 0 0 0 0 rgba(255,0,0,0); }
+  to { box-shadow: 0 0 10px 4px rgba(255,0,0,0.35); }
+}
+
+#label-computer {
+  width: 200px;
+  max-width: 50vmin;
+  position: absolute;
+  top: 80%;
+  top: calc(50% + 30vmin);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  animation: shadow 0.75s infinite alternate;
+}
+
+@keyframes beginnerAnimation {
+  from { z-index: 9; }
+  to { z-index: 1; }
+}
+
+#label-computer label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  animation: beginnerAnimation 0.9s infinite;
+}
+
+#label-computer label:active {
+  position:static !important;
+  margin-left: 100% !important;
+  background: none !important;
+  font-size: 0;
+}
+
+#label-computer label:active::before {
+    content:"";
+    position:absolute;
+    top:0;
+    right:-50px;
+    left:0;
+    bottom:0;
+    z-index:101;
+}
+
+#label-computer label:nth-child(1) { animation-delay: -0.1s; }
+#label-computer label:nth-child(2) { animation-delay: -0.2s; }
+#label-computer label:nth-child(3) { animation-delay: -0.3s; }
+#label-computer label:nth-child(4) { animation-delay: -0.4s; }
+#label-computer label:nth-child(5) { animation-delay: -0.5s; }
+#label-computer label:nth-child(6) { animation-delay: -0.6s; }
+#label-computer label:nth-child(7) { animation-delay: -0.7s; }
+#label-computer label:nth-child(8) { animation-delay: -0.8s; }
+#label-computer label:nth-child(9) { animation-delay: 0s; }
 
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tic Tac Toe</title>
-    <link href="tictactoe.html" rel="stylesheet" />
-</head>
-<body>
-<h1>Tic Tac Toe</h1>
-<div id="board">
-    <div data-index="1" class="tile right-border bottom-border"></div>
-    <div data-index="2" class="tile right-border bottom-border"></div>
-    <div data-index="3" class="tile bottom-border"></div>
-    <div data-index="4" class="tile right-border bottom-border"></div>
-    <div data-index="5" class="tile right-border bottom-border"></div>
-    <div data-index="6" class="tile bottom-border"></div>
-    <div data-index="7" class="tile right-border"></div>
-    <div data-index="8" class="tile right-border"></div>
-    <div data-index="9" class="tile"></div>
-    <div id="strike" class="strike"></div>
-</div>
-<div id="game-over-area" class="hidden">
-    <h2 id="game-over-text">Winner is X</h2>
-    <button id="play-again">Play Again</button>
-</div>
-<script src="tictactoe.js"></script>
-</body>
-</html>
+/* Special cases */
+#cell-0-x:checked ~ #cell-4-x:checked ~ #cell-8-o:checked ~ #label-computer label[for='cell-2-o'],
+#cell-0-x:checked ~ #cell-4-x:checked ~ #cell-8-o:checked ~ #label-computer label[for='cell-6-o'],
+#cell-2-x:checked ~ #cell-4-x:checked ~ #cell-6-o:checked ~ #label-computer label[for='cell-0-o'],
+#cell-2-x:checked ~ #cell-4-x:checked ~ #cell-6-o:checked ~ #label-computer label[for='cell-8-o'],
+#cell-2-o:checked ~ #cell-4-x:checked ~ #cell-6-x:checked ~ #label-computer label[for='cell-0-o'],
+#cell-2-o:checked ~ #cell-4-x:checked ~ #cell-6-x:checked ~ #label-computer label[for='cell-8-o'],
+#cell-0-o:checked ~ #cell-4-x:checked ~ #cell-8-x:checked ~ #label-computer label[for='cell-2-o'],
+#cell-0-o:checked ~ #cell-4-x:checked ~ #cell-8-x:checked ~ #label-computer label[for='cell-6-o'] {
+  z-index: 65;
+  animation: none;
+}
 
-<script>
-    const tiles = document.querySelectorAll(".tile");
-    const PLAYER_X = "X";
-    const PLAYER_O = "O";
-    let turn = PLAYER_X;
+@keyframes miniAnimation {
+  from { z-index: 75; }
+  to { z-index: 72; }
+}
 
-    const boardState = Array(tiles.length);
-    boardState.fill(null);
+#cell-0-o:not(:checked) ~ #cell-2-o:not(:checked) ~ #cell-4-x:checked ~ #cell-6-o:not(:checked) ~ #cell-8-o:not(:checked) ~ #label-computer label[for='cell-0-o'],
+#cell-0-o:not(:checked) ~ #cell-2-o:not(:checked) ~ #cell-4-x:checked ~ #cell-6-o:not(:checked) ~ #cell-8-o:not(:checked) ~ #label-computer label[for='cell-2-o'],
+#cell-0-o:not(:checked) ~ #cell-2-o:not(:checked) ~ #cell-4-x:checked ~ #cell-6-o:not(:checked) ~ #cell-8-o:not(:checked) ~ #label-computer label[for='cell-6-o'],
+#cell-0-o:not(:checked) ~ #cell-2-o:not(:checked) ~ #cell-4-x:checked ~ #cell-6-o:not(:checked) ~ #cell-8-o:not(:checked) ~ #label-computer label[for='cell-8-o'] {
+  z-index: 75;
+  animation: miniAnimation 0.4s infinite linear;
+}
 
-    //Elements
-    const strike = document.getElementById("strike");
-    const gameOverArea = document.getElementById("game-over-area");
-    const gameOverText = document.getElementById("game-over-text");
-    const playAgain = document.getElementById("play-again");
-    playAgain.addEventListener("click", startNewGame);
+#cell-0-o:not(:checked) ~ #cell-2-o:not(:checked) ~ #cell-4-x:checked ~ #cell-6-o:not(:checked) ~ #cell-8-o:not(:checked) ~ #label-computer label[for='cell-0-o'] { animation-delay: -0.3s; }
+#cell-0-o:not(:checked) ~ #cell-2-o:not(:checked) ~ #cell-4-x:checked ~ #cell-6-o:not(:checked) ~ #cell-8-o:not(:checked) ~ #label-computer label[for='cell-2-o'] {  animation-delay: -0.2s; }
+#cell-0-o:not(:checked) ~ #cell-2-o:not(:checked) ~ #cell-4-x:checked ~ #cell-6-o:not(:checked) ~ #cell-8-o:not(:checked) ~ #label-computer label[for='cell-6-o'] { animation-delay: -0.1s; }
 
-    //Sounds
-    const gameOverSound = new Audio("sounds/game_over.wav");
-    const clickSound = new Audio("sounds/click.wav");
 
-    tiles.forEach((tile) => tile.addEventListener("click", tileClick));
 
-    function setHoverText() {
-      //remove all hover text
-      tiles.forEach((tile) => {
-        tile.classList.remove("x-hover");
-        tile.classList.remove("o-hover");
-      });
+#difficulty:checked ~ form #cell-0-x:checked ~ #cell-4-o:checked ~ #cell-8-x:checked ~ #label-computer label[for='cell-1-o'],
+#difficulty:checked ~ form #cell-0-x:checked ~ #cell-4-o:checked ~ #cell-8-x:checked ~ #label-computer label[for='cell-3-o'],
+#difficulty:checked ~ form #cell-0-x:checked ~ #cell-4-o:checked ~ #cell-8-x:checked ~ #label-computer label[for='cell-5-o'],
+#difficulty:checked ~ form #cell-0-x:checked ~ #cell-4-o:checked ~ #cell-8-x:checked ~ #label-computer label[for='cell-7-o'],
+#difficulty:checked ~ form #cell-2-x:checked ~ #cell-4-o:checked ~ #cell-6-x:checked ~ #label-computer label[for='cell-1-o'],
+#difficulty:checked ~ form #cell-2-x:checked ~ #cell-4-o:checked ~ #cell-6-x:checked ~ #label-computer label[for='cell-3-o'],
+#difficulty:checked ~ form #cell-2-x:checked ~ #cell-4-o:checked ~ #cell-6-x:checked ~ #label-computer label[for='cell-5-o'],
+#difficulty:checked ~ form #cell-2-x:checked ~ #cell-4-o:checked ~ #cell-6-x:checked ~ #label-computer label[for='cell-7-o'],
+#difficulty:checked ~ form #cell-1-x:checked ~ #cell-3-x:checked ~ #cell-4-o:checked ~ #label-computer label[for='cell-0-o'],
+#difficulty:checked ~ form #cell-1-x:checked ~ #cell-3-x:checked ~ #cell-4-o:checked ~ #label-computer label[for='cell-2-o'],
+#difficulty:checked ~ form #cell-1-x:checked ~ #cell-3-x:checked ~ #cell-4-o:checked ~ #label-computer label[for='cell-6-o'],
+#difficulty:checked ~ form #cell-1-x:checked ~ #cell-4-o:checked ~ #cell-5-x:checked ~ #label-computer label[for='cell-0-o'],
+#difficulty:checked ~ form #cell-1-x:checked ~ #cell-4-o:checked ~ #cell-5-x:checked ~ #label-computer label[for='cell-2-o'],
+#difficulty:checked ~ form #cell-1-x:checked ~ #cell-4-o:checked ~ #cell-5-x:checked ~ #label-computer label[for='cell-8-o'],
+#difficulty:checked ~ form #cell-3-x:checked ~ #cell-4-o:checked ~ #cell-7-x:checked ~ #label-computer label[for='cell-0-o'],
+#difficulty:checked ~ form #cell-3-x:checked ~ #cell-4-o:checked ~ #cell-7-x:checked ~ #label-computer label[for='cell-6-o'],
+#difficulty:checked ~ form #cell-3-x:checked ~ #cell-4-o:checked ~ #cell-7-x:checked ~ #label-computer label[for='cell-8-o'],
+#difficulty:checked ~ form #cell-4-o:checked ~ #cell-5-x:checked ~ #cell-7-x:checked ~ #label-computer label[for='cell-2-o'],
+#difficulty:checked ~ form #cell-4-o:checked ~ #cell-5-x:checked ~ #cell-7-x:checked ~ #label-computer label[for='cell-6-o'],
+#difficulty:checked ~ form #cell-4-o:checked ~ #cell-5-x:checked ~ #cell-7-x:checked ~ #label-computer label[for='cell-8-o']
+{
+  z-index: 70;
+  animation: none;
+}
 
-      const hoverClass = `${turn.toLowerCase()}-hover`;
+/* Prevent other player from winning! */
+#difficulty:checked ~ form #cell-1-x:checked ~ #cell-2-x:checked ~ #label-computer label[for='cell-0-o'],
+#difficulty:checked ~ form #cell-3-x:checked ~ #cell-6-x:checked ~ #label-computer label[for='cell-0-o'],
+#difficulty:checked ~ form #cell-4-x:checked ~ #cell-8-x:checked ~ #label-computer label[for='cell-0-o'],
+#difficulty:checked ~ form #cell-0-x:checked ~ #cell-2-x:checked ~ #label-computer label[for='cell-1-o'],
+#difficulty:checked ~ form #cell-4-x:checked ~ #cell-7-x:checked ~ #label-computer label[for='cell-1-o'],
+#difficulty:checked ~ form #cell-0-x:checked ~ #cell-1-x:checked ~ #label-computer label[for='cell-2-o'],
+#difficulty:checked ~ form #cell-5-x:checked ~ #cell-8-x:checked ~ #label-computer label[for='cell-2-o'],
+#difficulty:checked ~ form #cell-4-x:checked ~ #cell-6-x:checked ~ #label-computer label[for='cell-2-o'],
+#difficulty:checked ~ form #cell-0-x:checked ~ #cell-6-x:checked ~ #label-computer label[for='cell-3-o'],
+#difficulty:checked ~ form #cell-4-x:checked ~ #cell-5-x:checked ~ #label-computer label[for='cell-3-o'],
+#difficulty:checked ~ form #cell-2-x:checked ~ #cell-8-x:checked ~ #label-computer label[for='cell-5-o'],
+#difficulty:checked ~ form #cell-3-x:checked ~ #cell-4-x:checked ~ #label-computer label[for='cell-5-o'],
+#difficulty:checked ~ form #cell-0-x:checked ~ #cell-3-x:checked ~ #label-computer label[for='cell-6-o'],
+#difficulty:checked ~ form #cell-2-x:checked ~ #cell-4-x:checked ~ #label-computer label[for='cell-6-o'],
+#difficulty:checked ~ form #cell-7-x:checked ~ #cell-8-x:checked ~ #label-computer label[for='cell-6-o'],
+#difficulty:checked ~ form #cell-1-x:checked ~ #cell-4-x:checked ~ #label-computer label[for='cell-7-o'],
+#difficulty:checked ~ form #cell-6-x:checked ~ #cell-8-x:checked ~ #label-computer label[for='cell-7-o'],
+#difficulty:checked ~ form #cell-0-x:checked ~ #cell-4-x:checked ~ #label-computer label[for='cell-8-o'],
+#difficulty:checked ~ form #cell-2-x:checked ~ #cell-5-x:checked ~ #label-computer label[for='cell-8-o'],
+#difficulty:checked ~ form #cell-6-x:checked ~ #cell-7-x:checked ~ #label-computer label[for='cell-8-o'] {
+  z-index: 80 !important;
+  animation: none;
+}
 
-      tiles.forEach((tile) => {
-        if (tile.innerText == "") {
-          tile.classList.add(hoverClass);
-        }
-      });
-    }
+/* if winning move, take it! */
+#difficulty:checked ~ form #cell-1-o:checked ~ #cell-2-o:checked ~ #label-computer label[for='cell-0-o'],
+#difficulty:checked ~ form #cell-3-o:checked ~ #cell-6-o:checked ~ #label-computer label[for='cell-0-o'],
+#difficulty:checked ~ form #cell-4-o:checked ~ #cell-8-o:checked ~ #label-computer label[for='cell-0-o'],
+#difficulty:checked ~ form #cell-0-o:checked ~ #cell-2-o:checked ~ #label-computer label[for='cell-1-o'],
+#difficulty:checked ~ form #cell-4-o:checked ~ #cell-7-o:checked ~ #label-computer label[for='cell-1-o'],
+#difficulty:checked ~ form #cell-0-o:checked ~ #cell-1-o:checked ~ #label-computer label[for='cell-2-o'],
+#difficulty:checked ~ form #cell-5-o:checked ~ #cell-8-o:checked ~ #label-computer label[for='cell-2-o'],
+#difficulty:checked ~ form #cell-4-o:checked ~ #cell-6-o:checked ~ #label-computer label[for='cell-2-o'],
+#difficulty:checked ~ form #cell-0-o:checked ~ #cell-6-o:checked ~ #label-computer label[for='cell-3-o'],
+#difficulty:checked ~ form #cell-4-o:checked ~ #cell-5-o:checked ~ #label-computer label[for='cell-3-o'],
+#difficulty:checked ~ form #cell-2-o:checked ~ #cell-8-o:checked ~ #label-computer label[for='cell-5-o'],
+#difficulty:checked ~ form #cell-3-o:checked ~ #cell-4-o:checked ~ #label-computer label[for='cell-5-o'],
+#difficulty:checked ~ form #cell-0-o:checked ~ #cell-3-o:checked ~ #label-computer label[for='cell-6-o'],
+#difficulty:checked ~ form #cell-2-o:checked ~ #cell-4-o:checked ~ #label-computer label[for='cell-6-o'],
+#difficulty:checked ~ form #cell-7-o:checked ~ #cell-8-o:checked ~ #label-computer label[for='cell-6-o'],
+#difficulty:checked ~ form #cell-1-o:checked ~ #cell-4-o:checked ~ #label-computer label[for='cell-7-o'],
+#difficulty:checked ~ form #cell-6-o:checked ~ #cell-8-o:checked ~ #label-computer label[for='cell-7-o'],
+#difficulty:checked ~ form #cell-0-o:checked ~ #cell-4-o:checked ~ #label-computer label[for='cell-8-o'],
+#difficulty:checked ~ form #cell-2-o:checked ~ #cell-5-o:checked ~ #label-computer label[for='cell-8-o'],
+#difficulty:checked ~ form #cell-6-o:checked ~ #cell-7-o:checked ~ #label-computer label[for='cell-8-o'] {
+  z-index: 99 !important;
+  animation: none;
+}
 
-    setHoverText();
+/* get center in first move */
+#difficulty:checked ~ form #label-computer label[for='cell-4-o'] {
+  z-index: 100;
+  animation: none;
+}
 
-    function tileClick(event) {
-      if (gameOverArea.classList.contains("visible")) {
-        return;
-      }
+#label-computer,
+input:checked ~ input:checked ~ #label-computer,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ #label-computer,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ #label-computer,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ #label-computer {
+  display: none;
+}
 
-      const tile = event.target;
-      const tileNumber = tile.dataset.index;
-      if (tile.innerText != "") {
-        return;
-      }
+input:checked ~ #label-computer,
+input:checked ~ input:checked ~ input:checked ~ #label-computer,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~  #label-computer,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ #label-computer {
+  display: block;
+}
 
-      if (turn === PLAYER_X) {
-        tile.innerText = PLAYER_X;
-        boardState[tileNumber - 1] = PLAYER_X;
-        turn = PLAYER_O;
-      } else {
-        tile.innerText = PLAYER_O;
-        boardState[tileNumber - 1] = PLAYER_O;
-        turn = PLAYER_X;
-      }
+label[for$='-x'],
+input:checked ~ input:checked ~ #board label[for$='-x'],
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ #board label[for$='-x'],
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ #board label[for$='-x'],
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ #board label[for$='-x'] {
+  z-index: 1;
+}
 
-      clickSound.play();
-      setHoverText();
-      checkWinner();
-    }
+input:checked ~ #board label[for$='-x'],
+input:checked ~ input:checked ~ input:checked ~ #board label[for$='-x'],
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ #board label[for$='-x'],
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ #board label[for$='-x'] {
+  z-index: -1;
+}
 
-    function checkWinner() {
-      //Check for a winner
-      for (const winningCombination of winningCombinations) {
-        //Object Destructuring
-        const { combo, strikeClass } = winningCombination;
-        const tileValue1 = boardState[combo[0] - 1];
-        const tileValue2 = boardState[combo[1] - 1];
-        const tileValue3 = boardState[combo[2] - 1];
 
-        if (
-          tileValue1 != null &&
-          tileValue1 === tileValue2 &&
-          tileValue1 === tileValue3
-        ) {
-          strike.classList.add(strikeClass);
-          gameOverScreen(tileValue1);
-          return;
-        }
-      }
 
-      //Check for a draw
-      const allTileFilledIn = boardState.every((tile) => tile !== null);
-      if (allTileFilledIn) {
-        gameOverScreen(null);
-      }
-    }
 
-    function gameOverScreen(winnerText) {
-      let text = "Draw!";
-      if (winnerText != null) {
-        text = `Winner is ${winnerText}!`;
-      }
-      gameOverArea.className = "visible";
-      gameOverText.innerText = text;
-      gameOverSound.play();
-    }
 
-    function startNewGame() {
-      strike.className = "strike";
-      gameOverArea.className = "hidden";
-      boardState.fill(null);
-      tiles.forEach((tile) => (tile.innerText = ""));
-      turn = PLAYER_X;
-      setHoverText();
-    }
 
-    const winningCombinations = [
-      //rows
-      { combo: [1, 2, 3], strikeClass: "strike-row-1" },
-      { combo: [4, 5, 6], strikeClass: "strike-row-2" },
-      { combo: [7, 8, 9], strikeClass: "strike-row-3" },
-      //columns
-      { combo: [1, 4, 7], strikeClass: "strike-column-1" },
-      { combo: [2, 5, 8], strikeClass: "strike-column-2" },
-      { combo: [3, 6, 9], strikeClass: "strike-column-3" },
-      //diagonals
-      { combo: [1, 5, 9], strikeClass: "strike-diagonal-1" },
-      { combo: [3, 5, 7], strikeClass: "strike-diagonal-2" },
-    ];
-</script>
+#first:checked ~ form #label-computer,
+#first:checked ~ form input:checked ~ input:checked ~ #label-computer,
+#first:checked ~ form input:checked ~ input:checked ~ input:checked ~ input:checked ~ #label-computer,
+#first:checked ~ form input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ #label-computer,
+#first:checked ~ form input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ #label-computer {
+  display: block;
+}
+
+#first:checked ~ form input:checked ~ #label-computer,
+#first:checked ~ form input:checked ~ input:checked ~ input:checked ~ #label-computer,
+#first:checked ~ form input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~  #label-computer,
+#first:checked ~ form input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ #label-computer {
+  display: none;
+}
+
+#first:checked ~ form label[for$='-x'],
+#first:checked ~ form input:checked ~ input:checked ~ #board label[for$='-x'],
+#first:checked ~ form input:checked ~ input:checked ~ input:checked ~ input:checked ~ #board label[for$='-x'],
+#first:checked ~ form input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ #board label[for$='-x'],
+#first:checked ~ form input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ #board label[for$='-x'] {
+  z-index: -1;
+}
+
+#first:checked ~ form input:checked ~ #board label[for$='-x'],
+#first:checked ~ form input:checked ~ input:checked ~ input:checked ~ #board label[for$='-x'],
+#first:checked ~ form input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ #board label[for$='-x'],
+#first:checked ~ form input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ #board label[for$='-x'] {
+  z-index: 1;
+}
+
+
+
+
+input[id*='-0-']:checked ~ div label[for*='-0-'],
+input[id*='-1-']:checked ~ div label[for*='-1-'],
+input[id*='-2-']:checked ~ div label[for*='-2-'],
+input[id*='-3-']:checked ~ div label[for*='-3-'],
+input[id*='-4-']:checked ~ div label[for*='-4-'],
+input[id*='-5-']:checked ~ div label[for*='-5-'],
+input[id*='-6-']:checked ~ div label[for*='-6-'],
+input[id*='-7-']:checked ~ div label[for*='-7-'],
+input[id*='-8-']:checked ~ div label[for*='-8-'] {
+  display: none !important;
+}
+
+input[id*='-0-']:checked ~ #board #tile-0 div,
+input[id*='-1-']:checked ~ #board #tile-1 div,
+input[id*='-2-']:checked ~ #board #tile-2 div,
+input[id*='-3-']:checked ~ #board #tile-3 div,
+input[id*='-4-']:checked ~ #board #tile-4 div,
+input[id*='-5-']:checked ~ #board #tile-5 div,
+input[id*='-6-']:checked ~ #board #tile-6 div,
+input[id*='-7-']:checked ~ #board #tile-7 div,
+input[id*='-8-']:checked ~ #board #tile-8 div {
+  display: block;
+}
+
+input[id*='-0-x']:checked ~ #board #tile-0 div::before,
+input[id*='-1-x']:checked ~ #board #tile-1 div::before,
+input[id*='-2-x']:checked ~ #board #tile-2 div::before,
+input[id*='-3-x']:checked ~ #board #tile-3 div::before,
+input[id*='-4-x']:checked ~ #board #tile-4 div::before,
+input[id*='-5-x']:checked ~ #board #tile-5 div::before,
+input[id*='-6-x']:checked ~ #board #tile-6 div::before,
+input[id*='-7-x']:checked ~ #board #tile-7 div::before,
+input[id*='-8-x']:checked ~ #board #tile-8 div::before {
+  content: "X";
+  background: #004974;
+  color: #89dcf6;
+}
+
+input[id*='-0-o']:checked ~ #board #tile-0 div::before,
+input[id*='-1-o']:checked ~ #board #tile-1 div::before,
+input[id*='-2-o']:checked ~ #board #tile-2 div::before,
+input[id*='-3-o']:checked ~ #board #tile-3 div::before,
+input[id*='-4-o']:checked ~ #board #tile-4 div::before,
+input[id*='-5-o']:checked ~ #board #tile-5 div::before,
+input[id*='-6-o']:checked ~ #board #tile-6 div::before,
+input[id*='-7-o']:checked ~ #board #tile-7 div::before,
+input[id*='-8-o']:checked ~ #board #tile-8 div::before {
+  content: "O";
+  background: #a60011;
+  color: #ffc7b5;
+}
+
+.tile label:hover {
+  cursor: pointer;
+  background: rgba(0,0,0,0.25);
+}
+
+.tile label::before,
+.tile div::before {
+  color: #000;
+  position: absolute;
+  text-align:center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 7.5vmin;
+  font-weight: bold;
+}
+
+.tile div::before {
+  padding: 100%;
+}
+
+.tile label[for$='-o']:hover::before {
+  content: "O";
+}
+
+.tile label[for$='-x']:hover::before {
+  content: "X";
+}
+
+#tile-0 {
+  grid-column: 1;
+  grid-row: 1;
+}
+#tile-0 label,
+#tile-0 div {
+  border-radius: 10% 0 0 0;
+}
+#tile-1 {
+  grid-column: 2;
+  grid-row: 1;
+}
+#tile-2 {
+  grid-column: 3;
+  grid-row: 1;
+}
+#tile-2 label,
+#tile-2 div {
+  border-radius: 0 10% 0 0;
+}
+#tile-3 {
+  grid-column: 1;
+  grid-row: 2;
+}
+#tile-4 {
+  grid-column: 2;
+  grid-row: 2;
+}
+#tile-5 {
+  grid-column: 3;
+  grid-row: 2;
+}
+#tile-6 {
+  grid-column: 1;
+  grid-row: 3;
+}
+#tile-6 label,
+#tile-6 div {
+  border-radius: 0 0 0 10%;
+}
+#tile-7 {
+  grid-column: 2;
+  grid-row: 3;
+}
+#tile-8 {
+  grid-column: 3;
+  grid-row: 3;
+}
+#tile-8 label,
+#tile-8 div {
+  border-radius: 0 0 10% 0;
+}
+
+.scrim {
+  background: rgba(255,255,255,0.85);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  z-index: 9;
+}
+
+#message {
+  text-align: center;
+  font-size: 2rem;
+  line-height: 2.2rem;
+  font-weight: bold;
+}
+
+#message::before {
+  content: "Tied game!"
+}
+
+#message input {
+  background: #000;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.5rem 1.75rem;
+  margin: auto auto;
+  margin-top: 2rem;
+}
+
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ #end,
+#cell-0-x:checked ~ #cell-1-x:checked ~ #cell-2-x:checked ~ #end,
+#cell-3-x:checked ~ #cell-4-x:checked ~ #cell-5-x:checked ~ #end,
+#cell-6-x:checked ~ #cell-7-x:checked ~ #cell-8-x:checked ~ #end,
+#cell-0-x:checked ~ #cell-3-x:checked ~ #cell-6-x:checked ~ #end,
+#cell-1-x:checked ~ #cell-4-x:checked ~ #cell-7-x:checked ~ #end,
+#cell-2-x:checked ~ #cell-5-x:checked ~ #cell-8-x:checked ~ #end,
+#cell-0-x:checked ~ #cell-4-x:checked ~ #cell-8-x:checked ~ #end,
+#cell-2-x:checked ~ #cell-4-x:checked ~ #cell-6-x:checked ~ #end,
+#cell-0-o:checked ~ #cell-1-o:checked ~ #cell-2-o:checked ~ #end,
+#cell-3-o:checked ~ #cell-4-o:checked ~ #cell-5-o:checked ~ #end,
+#cell-6-o:checked ~ #cell-7-o:checked ~ #cell-8-o:checked ~ #end,
+#cell-0-o:checked ~ #cell-3-o:checked ~ #cell-6-o:checked ~ #end,
+#cell-1-o:checked ~ #cell-4-o:checked ~ #cell-7-o:checked ~ #end,
+#cell-2-o:checked ~ #cell-5-o:checked ~ #cell-8-o:checked ~ #end,
+#cell-0-o:checked ~ #cell-4-o:checked ~ #cell-8-o:checked ~ #end,
+#cell-2-o:checked ~ #cell-4-o:checked ~ #cell-6-o:checked ~ #end {
+  display: block;
+}
+
+#cell-0-x:checked ~ #cell-1-x:checked ~ #cell-2-x:checked ~ #end #message::before,
+#cell-3-x:checked ~ #cell-4-x:checked ~ #cell-5-x:checked ~ #end #message::before,
+#cell-6-x:checked ~ #cell-7-x:checked ~ #cell-8-x:checked ~ #end #message::before,
+#cell-0-x:checked ~ #cell-3-x:checked ~ #cell-6-x:checked ~ #end #message::before,
+#cell-1-x:checked ~ #cell-4-x:checked ~ #cell-7-x:checked ~ #end #message::before,
+#cell-2-x:checked ~ #cell-5-x:checked ~ #cell-8-x:checked ~ #end #message::before,
+#cell-0-x:checked ~ #cell-4-x:checked ~ #cell-8-x:checked ~ #end #message::before,
+#cell-2-x:checked ~ #cell-4-x:checked ~ #cell-6-x:checked ~ #end #message::before {
+  content: "Player won!";
+}
+
+#cell-0-o:checked ~ #cell-1-o:checked ~ #cell-2-o:checked ~ #end #message::before,
+#cell-3-o:checked ~ #cell-4-o:checked ~ #cell-5-o:checked ~ #end #message::before,
+#cell-6-o:checked ~ #cell-7-o:checked ~ #cell-8-o:checked ~ #end #message::before,
+#cell-0-o:checked ~ #cell-3-o:checked ~ #cell-6-o:checked ~ #end #message::before,
+#cell-1-o:checked ~ #cell-4-o:checked ~ #cell-7-o:checked ~ #end #message::before,
+#cell-2-o:checked ~ #cell-5-o:checked ~ #cell-8-o:checked ~ #end #message::before,
+#cell-0-o:checked ~ #cell-4-o:checked ~ #cell-8-o:checked ~ #end #message::before,
+#cell-2-o:checked ~ #cell-4-o:checked ~ #cell-6-o:checked ~ #end #message::before {
+  content: "Computer won!";
+}
+</STYLE>
 
 {% endblock %}
 
