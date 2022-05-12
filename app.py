@@ -33,6 +33,10 @@ def Sanvi():
 
 # PBL pages
 
+@app.route('/Hangman/')
+def Hangman():
+    return render_template("Hangman.html")
+
 @app.route('/tictactoe/')
 def tictactoe():
     return render_template("tictactoe.html")
