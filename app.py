@@ -54,9 +54,9 @@ def snake():
     return render_template("snake.html")
 
 
-@app.route('/flappyblocks/')
-def flappyblocks():
-    return render_template("flappyblocks.html")
+@app.route('/pingpong/')
+def pingpong():
+    return render_template("pingpong.html")
 
 
 @app.route('/lookup')
