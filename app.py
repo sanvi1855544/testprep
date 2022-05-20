@@ -30,6 +30,10 @@ def Gennalyn():
 def Sanvi():
     return render_template("Sanvi.html")
 
+@app.route("/Kian/")
+def Kian():
+    return render_template("Kian.html")
+
 
 # PBL pages
 
