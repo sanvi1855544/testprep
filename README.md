@@ -4,6 +4,7 @@
 Our website goal is to help relieve the stress of students here at Del Norte and feel college and career ready for the AP exam
 ## Welcome to our test prep website! Our sponser is Mr.M (CSP teacher) and we will be providing free test prep (MCQ, FRQ, and create task guidance)
 ## [Scrum Board](https://github.com/sanvi1855544/testprep/projects/1)
+## [Team Github Page](https://sanvi1855544.github.io/testprep/)
 
 ## Contributors
 <table>
@@ -42,4 +43,11 @@ Our website goal is to help relieve the stress of students here at Del Norte and
 <a href="https://github.com/sanvi1855544/testprep/issues/13">Week 2 Ticket</a> <br>
 <a href="https://github.com/sanvi1855544/testprep/issues/8">Week 1 Ticket</a> <br>
 <a href="https://github.com/sanvi1855544/testprep/issues/1">Week 0 Ticket</a> 
+
+![image](https://user-images.githubusercontent.com/89223650/169590061-b5dcfbbc-fa79-4f86-a6f7-2b5266dcdac8.png)![image](https://user-images.githubusercontent.com/89223650/169590435-db48c85f-76bc-4dad-bfab-e9b7673a9ee5.png)
+![image](https://user-images.githubusercontent.com/89223650/169590325-cfbf9ff1-9ac9-4a29-b41a-fe4f393868ba.png)
+
+
+
+
 
