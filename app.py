@@ -62,6 +62,14 @@ def snake():
 def pingpong():
     return render_template("pingpong.html")
 
+@app.route('/replit/')
+def replit():
+    return render_template("replit.html")
+
+@app.route('/replit2/')
+def replit2():
+    return render_template("replit2.html")
+
 
 @app.route('/lookup')
 def lookup():
