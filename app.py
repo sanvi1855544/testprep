@@ -1,7 +1,7 @@
 from __init__ import app
 from flask import Flask, render_template, request
-from crud.app_crud import app_crud
-from crud.app_crud_api import app_crud_api
+from cruddy.app_crud import app_crud
+from cruddy.app_crud_api import app_crud_api
 from Sanvi.templates.Sanvi import sanvi_bp
 from Shruti.templates.Shruti import shruti_bp
 from Kian.templates.Kian import kian_bp
