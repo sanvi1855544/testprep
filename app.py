@@ -74,6 +74,11 @@ def replit2():
 def replit3():
     return render_template("replit3.html")
 
+@app.route('/test/')
+def test():
+    return render_template("test.html")
+
+
 
 @app.route('/lookup')
 def lookup():
