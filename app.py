@@ -7,8 +7,11 @@ from Shruti.templates.Shruti import shruti_bp
 from Kian.templates.Kian import kian_bp
 from Gennalyn.templates.Gennalyn import gennalyn_bp
 
+from notey.app_notes import app_notes
+
 app.register_blueprint(app_crud)
 app.register_blueprint(app_crud_api)
+app.register_blueprint(app_notes)
 
 
 @app.route("/")
