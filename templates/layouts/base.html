@@ -43,9 +43,11 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false" id="dropdownMenuButton2" type="button">Database</a>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                            <li><a class="dropdown-item" href={{ url_for('notes.notes') }}>SQL Notes</a></li>
                             <li><a class="dropdown-item" href={{ url_for('crud.crud') }}>Crud</a></li>
                             <li><a class="dropdown-item" href={{ url_for('crud.search') }}>Search</a></li>
                             <li><a class="dropdown-item" href={{ url_for('crud_api.crud_api') }}>Crud Async</a></li>
+
                         </ul>
                     </li>
 
