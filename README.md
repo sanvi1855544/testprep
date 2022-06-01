@@ -2,6 +2,9 @@
 
 
 Our website goal is to help relieve the stress of students here at Del Norte and feel college and career ready for the AP exam
+
+http://18.144.71.170/
+
 ## Welcome to our test prep website! Our sponser is Mr.M (CSP teacher) and we will be providing free test prep (MCQ, FRQ, and create task guidance)
 ## [Scrum Board](https://github.com/sanvi1855544/testprep/projects/1)
 ## [Team Github Page](https://sanvi1855544.github.io/testprep/)
