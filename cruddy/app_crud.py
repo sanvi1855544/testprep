@@ -72,6 +72,7 @@ def create():
             request.form.get("email"),
             request.form.get("password"),
             request.form.get("phone")
+
         )
         po.create()
     return redirect(url_for('crud.crud'))

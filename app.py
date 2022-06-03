@@ -77,6 +77,18 @@ def replit2():
 def replit3():
     return render_template("replit3.html")
 
+@__init__.app.route('/drawing/')
+def drawing():
+    return render_template("drawing.html")
+
+@__init__.app.route('/terminal/')
+def terminal():
+    return render_template("terminal.html")
+
+@__init__.app.route('/lab/')
+def FlyLab():
+    return render_template("lab.html")
+
 @__init__.app.route('/test/')
 def test():
     return render_template("test.html")
