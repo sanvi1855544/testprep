@@ -1,4 +1,4 @@
-from __init__ import app
+import __init__
 from flask import Flask, render_template, request
 from cruddy.app_crud import app_crud
 from cruddy.app_crud_api import app_crud_api
@@ -9,12 +9,12 @@ from Gennalyn.templates.Gennalyn import gennalyn_bp
 
 from notey.app_notes import app_notes
 
-app.register_blueprint(app_crud)
-app.register_blueprint(app_crud_api)
-app.register_blueprint(app_notes)
+__init__.app.register_blueprint(app_crud)
+__init__.app.register_blueprint(app_crud_api)
+__init__.app.register_blueprint(app_notes)
 
 
-@app.route("/")
+@__init__.app.route("/")
 def index():
     import requests
     URL = "https://last-airbender-api.herokuapp.com/api/v1/characters/random"
@@ -24,66 +24,66 @@ def index():
 
 
 # about pages
-@app.route("/Gennalyn/")
+@__init__.app.route("/Gennalyn/")
 def Gennalyn():
     return render_template("Gennalyn.html")
 
 
-@app.route("/Sanvi/")
+@__init__.app.route("/Sanvi/")
 def Sanvi():
     return render_template("Sanvi.html")
 
-@app.route("/Kian/")
+@__init__.app.route("/Kian/")
 def Kian():
     return render_template("Kian.html")
 
 
 # PBL pages
 
-@app.route('/Hangman/')
+@__init__.app.route('/Hangman/')
 def Hangman():
     return render_template("Hangman.html")
 
-@app.route('/tictactoe/')
+@__init__.app.route('/tictactoe/')
 def tictactoe():
     return render_template("tictactoe.html")
 
-@app.route('/diagnostic/')
+@__init__.app.route('/diagnostic/')
 def diagnostic():
     return render_template("diagnostic.html")
 
-@app.route('/flashcard/')
+@__init__.app.route('/flashcard/')
 def flashcard():
     return render_template("flashcard.html")
 
-@app.route('/snake/')
+@__init__.app.route('/snake/')
 def snake():
     return render_template("snake.html")
 
 
-@app.route('/pingpong/')
+@__init__.app.route('/pingpong/')
 def pingpong():
     return render_template("pingpong.html")
 
-@app.route('/replit/')
+@__init__.app.route('/replit/')
 def replit():
     return render_template("replit.html")
 
-@app.route('/replit2/')
+@__init__.app.route('/replit2/')
 def replit2():
     return render_template("replit2.html")
 
-@app.route('/replit3/')
+@__init__.app.route('/replit3/')
 def replit3():
     return render_template("replit3.html")
 
-@app.route('/test/')
+@__init__.app.route('/test/')
 def test():
     return render_template("test.html")
 
 
 
-@app.route('/lookup')
+@__init__.app.route('/lookup')
 def lookup():
     query = request.args.get('lookup')
     # req_search = query.filter_by(req_no=query)
@@ -98,10 +98,10 @@ def lookup():
 
 
 if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=8080)
+    __init__.app.run(host="127.0.0.1", port=8080)
 
-app.register_blueprint(sanvi_bp)
-app.register_blueprint(shruti_bp)
-app.register_blueprint(kian_bp)
-app.register_blueprint(gennalyn_bp)
+__init__.app.register_blueprint(sanvi_bp)
+__init__.app.register_blueprint(shruti_bp)
+__init__.app.register_blueprint(kian_bp)
+__init__.app.register_blueprint(gennalyn_bp)
 
